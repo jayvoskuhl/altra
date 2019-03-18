@@ -1782,17 +1782,18 @@ require(['jquery','domReady'],function($,domReady){
                     clientHeight = $(window).height();
                     clientWidth = $(window).width();
                     if(oldWidth < 768) {
-                    if(clientWidth > 767) {
-                        window.location.reload();
+                    	if(clientWidth > 767) {
+                        	window.location.reload();
+                    	} else {
+                        	killROIMobile();
+				console.log('mobile');
+                    	}
                     } else {
-                        killROIMobile();
-                    }
-                    } else {
-                    if(clientWidth < 768){
-                        window.location.reload();
-                    } else {
-                        killROI();
-                    }
+                    	if(clientWidth < 768){
+                        	window.location.reload();
+                    	} else {
+                        	killROI();
+                    	}
                     }
                 }, 750);
                 });
